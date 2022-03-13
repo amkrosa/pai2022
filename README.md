@@ -12,6 +12,8 @@ Used in the project:
 ### Setup
 Open CLI in project path and run:
 
-`docker-compose up`
+```sh
+docker-compose up
+```
 
 Docker should build images and run containers.
