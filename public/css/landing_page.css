@@ -74,13 +74,18 @@ body {
 }
 
 .sections-container section {
+    font-family: 'Roboto', serif;
+    font-style: normal;
+    font-size: 1.3em;
+    line-height: 1.95vh;
+
     /* Auto layout */
     position: static;
     width: 20vw;
     height: 39vh;
 
     /* Inside auto layout */
-    margin: 0px 6vw;
+    margin: 0 6vw;
 }
 
 .sections-container section h3 {

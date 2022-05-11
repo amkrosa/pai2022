@@ -1,0 +1,105 @@
+.login-paper-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8vh;
+
+    position: static;
+    width: 20vw;
+    height: 35vh;
+
+    /* material-theme/sys/light/surface */
+
+    background: #FBFDFC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0.5vw 0;
+}
+
+.login-input-container {
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0 0.9vw;
+
+    position: static;
+    width: 16.1vw;
+    height: 5.5vh;
+
+    /* M3/sys/light/outline */
+
+    border: 1px solid #79747E;
+    border-radius: 4px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 1.2vh 0;
+}
+
+.login-input-wrapper {
+    position: static;
+    left: 13px;
+    right: 37px;
+    top: 0;
+    bottom: 0;
+
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0 0;
+}
+
+.login-input-label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 4px;
+
+    position: relative;
+    width: 5vw;
+    height: 1.5vh;
+    left: 0px;
+    top: -0.8vh;
+
+    /* M3/sys/light/surface */
+
+    background: #FFFBFE;
+}
+
+.login-input-icon {
+    float: left;
+    position: static;
+    width: 24px;
+    height: 24px;
+    left: 0px;
+    top: calc(50% - 24px/2 + 1px);
+    margin: 0.3vh 0;
+
+}
+
+.login-input-wrapper > input {
+    background: #FBFDFC;
+    border: 0;
+    border-radius: 2px;
+    width: 12vw;
+    text-align: left;
+    letter-spacing: 0.72px;
+    margin: -2px 0.5vw;
+    padding: 0.5vh 1vw;
+    box-sizing: border-box;
+}

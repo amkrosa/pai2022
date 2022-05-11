@@ -1,21 +1,41 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="/public/css/styles.css">
-    <title>LOGIN PAGE</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/public/css/landing_page.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/buttons.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/login.css">
+    <script src="https://kit.fontawesome.com/1437dfc48d.js" crossorigin="anonymous"></script>
+    <title>mindhabit - Landing page</title>
 </head>
-
 <body>
-<div class="container">
-    <div class="logo">
-        <img src="/public/img/logo.svg">
+<div class="navbar-container">
+    <div class="logo-container">
+        <p>mindhabit</p>
     </div>
-    <div class="login-container">
-        <form class="login">
-            <input name="email" type="text" placeholder="email@email.com">
-            <input name="password" type="password" placeholder="password">
-            <button>LOGIN</button>
-        </form>
+</div>
+<div class="main-container">
+    <div class="center-container">
+        <div class="login-paper-container">
+            <div class="login-input-container">
+                <div class="login-input-wrapper">
+                    <div class="login-input-label">Username</div>
+                    <div class="login-input-icon"><i class="fa-solid fa-user"></i></div>
+                    <input></input>
+                </div>
+            </div>
+            <div class="login-input-container">
+                <div class="login-input-wrapper">
+                    <div class="login-input-label">Password</div>
+                    <div class="login-input-icon"><i class="fa-solid fa-key"></i></div>
+                    <input></input>
+                </div>
+            </div>
+            <button class="button-fill-primary">Login</button>
+
+
+        </div>
     </div>
 </div>
 </body>
+</html>
