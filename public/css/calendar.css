@@ -1,0 +1,157 @@
+.calendar-base {
+    background-color: white;
+    position: relative;
+    z-index: -1;
+    color: black;
+}
+
+.year {
+    display: flex;
+    justify-content: right;
+}
+
+.selected-day {
+    border-radius: 100%;
+    background: #2E6CD3;
+    color: white;
+}
+
+.selected-month {
+    border-radius: 100%;
+    background: #2E6CD3;
+    color: white;
+}
+
+.big-year {
+    color: black;
+    font-size: 30px;
+    position: relative;
+    font-weight: bold;
+    margin: 0 1vw;
+}
+
+.triangle-left {
+    width: 1vw;
+    margin: 0.35vh 1vw;
+    float: left;
+}
+.triangle-right {
+    width: 1vw;
+    margin: 0.35vh 1vw;
+    float: right;
+}
+
+.calendar-container .card {
+    width: 25vw;
+    height: 45vh;
+    border: 1px solid #79747E;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-left: 0.5em;
+    padding: 1em;
+}
+
+@media only screen and (max-device-width: 420px) {
+    .calendar-container .card {
+        width: 80vw;
+        height: 45vh;
+        border: 1px solid #79747E;
+        border-radius: 10px;
+        margin-left: 0.5em;
+        padding: 1em;
+        background-color: #f4f4f4;
+        box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+        text-align: center;
+    }
+    table.calendar-table {
+        text-align: center;
+        font-size: 5vw;
+        letter-spacing: 0.1em;
+    }
+
+    .months {
+        font-size: 5vw;
+    }
+    .big-year {
+        color: black;
+        font-size: 8vw;
+        position: relative;
+        font-weight: bold;
+        margin: 0 1vw;
+    }
+
+    .triangle-left {
+        width: 1vw;
+        margin: 0.35vh 1vw;
+        float: left;
+        font-size: 3vw;
+    }
+    .triangle-right {
+        width: 1vw;
+        margin: 0.35vh 1vw;
+        float: right;
+        font-size: 3vw;
+    }
+}
+table.calendar-table thead tr th {
+
+}
+
+table.calendar-table {
+    text-align: center;
+}
+
+
+table.calendar-table tbody {
+}
+
+table.calendar-table tbody tr > td{
+    padding: 1vw;
+}
+
+.card .months > span {
+    font-size: 1em;
+    padding: 0.3vh 1vw;
+    margin: 1vh;
+}
+
+.modal-overlay{
+    display: none;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content{
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    margin: 50% auto;
+    width: 100vw;
+}
+
+.modal-header h2, .modal-footer h3{
+    margin: 0;
+}
+
+.modal-header{
+    background: #1ce;
+    padding: 15px;
+    color: #fff;
+}
+
+.modal-body{
+    padding: 10px 20px;
+}

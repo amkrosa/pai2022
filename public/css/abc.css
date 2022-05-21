@@ -1,0 +1,276 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    justify-content: flex-start;
+    margin: 1vh 0;
+    padding: 1vh 1vw;
+    width: 90vw;
+    height: 10vh;
+
+    background: #6FF6F9;
+    border-radius: 100px;
+}
+
+.base-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    background: #FBFDFC;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh 0;
+
+    width: 100vw;
+}
+
+main > h3.title {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 8vh;
+    /* identical to box height, or 42% */
+    letter-spacing: 0.1px;
+
+    color: #000000;
+}
+
+main > .content-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1vh 0;
+
+    width: 100vw;
+}
+
+.content-container > .calendar-container {
+    margin-right: auto;
+    border: 2px black;
+
+    width: 25vw;
+}
+
+.content-container > section {
+    display: flex;
+    flex-direction: column;
+    width: 18vw;
+    margin: 1vh 3vw;
+}
+
+.content-container > section > .category {
+    display: flex;
+    border: 2px solid black;
+    border-radius: 10vw;
+    padding: 0 2vw;
+    margin: 0 0.5vw 3vh 0.5vw;
+    width: 15vw;
+}
+
+.content-container > section > .task {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    border-radius: 1vw;
+    padding: 0 2vw;
+    margin: 1vh 0.5vw;
+    width: 15vw;
+    height: 8vh;
+}
+
+.task > .task-content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+
+}
+.task > .task-check {
+    display: flex;
+    align-items: center;
+    margin-left: -1vw;
+    margin-right: 1vw;
+    font-size: 2vw;
+    height: 100%;
+    width: 20%;
+}
+
+nav h4 {
+    width: 299px;
+    height: 77px;
+
+    font-family: 'Chivo', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 120%;
+    /* identical to box height, or 77px */
+
+    display: flex;
+    align-items: center;
+
+    /* Base/Black100 */
+
+    color: #2C3131;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin-right: 25vw;
+}
+
+nav .nav-select {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 24px;
+
+    width: 19vw;
+    height: 5.4vh;
+
+    /* material-theme/sys/light/surface-variant */
+
+    background: #DAE4E4;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+
+    order: 1;
+}
+
+nav .nav-select p {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.3em;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    letter-spacing: 0.1px;
+
+    /* M3/sys/light/on-secondary-container */
+
+    color: #1D192B;
+}
+nav .nav-select .nav-icon {
+    padding: 1vh 1vw;
+}
+
+#modalBtn {
+    display: none;
+}
+
+#modal-iframe {
+    display: none;
+}
+
+.desktop {
+    display: flex;
+}
+
+@media only screen and (max-device-width: 420px) {
+    .desktop {
+        display: none;
+    }
+
+    #modal-iframe {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    #modalBtn {
+        display: flex;
+        font-size: 12vw;
+        padding: 4vw;
+        border-radius: 100%;
+        background: #6FF6F9;
+        position: fixed;
+        bottom: 2vh;
+    }
+
+    #modalBtn:hover {
+        background: #c2fbff;
+    }
+    i:hover {
+        background: #c2fbff;
+    }
+
+    main > .content-container {
+        font-size: 6vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        padding: 1vh 0;
+
+        width: 100vw;
+    }
+
+    .content-container > .calendar-container {
+        font-size: 6vw;
+        margin-right: auto;
+        border: 2px black;
+
+        width: 80vw;
+    }
+
+    .content-container > section {
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        align-items: center;
+        justify-items: center;
+        margin: 1vh 3vw;
+    }
+
+    .content-container > section > .category {
+        display: flex;
+        border: 2px solid black;
+        border-radius: 10vw;
+        padding: 0 2vw;
+        margin: 0 0.5vw 3vh 0.5vw;
+        width: 50vw;
+        justify-content: center;
+    }
+
+    .content-container > section > .task {
+        display: flex;
+        flex-direction: row;
+        border: 2px solid black;
+        border-radius: 1vw;
+        padding: 0 2vw;
+        margin: 1vh 0.5vw;
+        width: 75vw;
+        height: 8vh;
+    }
+
+    .task > .task-content {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 80%;
+
+    }
+    .task > .task-check {
+        display: flex;
+        align-items: center;
+        margin-left: 1vw;
+        margin-right: 3vw;
+        font-size: 8vw;
+        height: 100%;
+        width: 20%;
+    }
+}

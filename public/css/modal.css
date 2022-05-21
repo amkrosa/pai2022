@@ -1,0 +1,7 @@
+body {
+    background: transparent !important;
+}
+.closeBtn {
+    position: relative;
+    font-size: 10vw;
+}
