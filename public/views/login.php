@@ -17,22 +17,32 @@
 <div class="main-container">
     <div class="center-container">
         <div class="login-paper-container">
+            <div class="messages">
+                <?php
+                        if(isset($messages)){
+                            foreach($messages as $message) {
+                                echo $message;
+                            }
+                        }
+                    ?>
+            </div>
+            <form action="/login" method="POST">
             <div class="login-input-container">
                 <div class="login-input-wrapper">
                     <div class="login-input-label">Username</div>
                     <div class="login-input-icon"><i class="fa-solid fa-user"></i></div>
-                    <input placeholder="Username..."></input>
+                    <input name="email" placeholder="Email..."/>
                 </div>
             </div>
             <div class="login-input-container">
                 <div class="login-input-wrapper">
                     <div class="login-input-label">Password</div>
                     <div class="login-input-icon"><i class="fa-solid fa-key"></i></div>
-                    <input type="password" placeholder="Password..."></input>
+                    <input name="password" type="password" placeholder="Password..."/>
                 </div>
             </div>
-            <button class="button-fill-primary">Login</button>
-
+            <button type="submit" class="button-fill-primary">Login</button>
+            </form>
 
         </div>
     </div>

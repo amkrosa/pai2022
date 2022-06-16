@@ -144,7 +144,7 @@
     <i id="modalBtn" class="fa-solid fa-calendar"></i>
 
     <div id="simpleModal" class="modal-overlay">
-        <iframe id="modal-iframe" src="modal.html" allowtransparency="true"></iframe>
+        <iframe id="modal-iframe" src="/modal" allowtransparency="true"></iframe>
     </div>
 </div>
 <script>
