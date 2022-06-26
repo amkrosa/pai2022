@@ -19,6 +19,11 @@ class AppController
         return $this->request === 'POST';
     }
 
+    protected function getUrl(): string
+    {
+        return $this->url;
+    }
+
     protected function render(string $template = null, array $variables = [])
     {
         $templatePath = 'public/views/' . $template . '.php';
@@ -26,7 +31,6 @@ class AppController
 
         if (file_exists($templatePath)) {
             extract($variables);
-            error_log(print_r($variables, true));
             ob_start();
             include $templatePath;
             $output = ob_get_clean();

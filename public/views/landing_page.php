@@ -12,8 +12,8 @@
         <p>mindhabit</p>
     </div>
     <div class="buttons-container">
-        <button class="button-no-fill">Login</button>
-        <button class="button-fill-primary">Sign up</button>
+        <button class="button-no-fill"><a href="login">Login</a></button>
+        <button class="button-fill-primary"><a href="register">Sign up</a></button>
     </div>
 </div>
 <div class="main-container">

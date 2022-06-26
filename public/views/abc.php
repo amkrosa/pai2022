@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/public/css/abc.css">
     <link rel="stylesheet" type="text/css" href="/public/css/landing_page.css">
     <link rel="stylesheet" type="text/css" href="/public/css/buttons.css">
-    <link rel="stylesheet" type="text/css" href="/public/css/abc.css">
     <link rel="stylesheet" type="text/css" href="/public/css/calendar.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/loader.css">
+
     <script src="https://kit.fontawesome.com/1437dfc48d.js" crossorigin="anonymous"></script>
 
     <title>mindhabit - Landing page</title>
@@ -27,116 +29,73 @@
         <h3 class="title">ABC Technique</h3>
         <div class="content-container">
             <div class="desktop calendar-container">
-                <div class="card">
-                    <div class="year">
-                        <div class="triangle-left">
-                            <i class="fa-solid fa-chevron-left triangle-left"></i>
-                        </div>
-                        <div class="big-year" id="yearNum">
-                        </div>
-                        <div class="triangle-right">
-                            <i class="fa-solid fa-chevron-right triangle-right"></i>
-                        </div>
-                    </div>
-                    <div class="months">
-                    </div>
-                    <hr class="month-line"/>
-                    <table class="calendar-table" id="calendar">
-                        <thead>
-                        <tr>
-                            <th class="days-of-week">Sun</th>
-                            <th class="days-of-week">Mon</th>
-                            <th class="days-of-week">Tue</th>
-                            <th class="days-of-week">Wed</th>
-                            <th class="days-of-week">Thu</th>
-                            <th class="days-of-week">Fri</th>
-                            <th class="days-of-week">Sat</th>
-                        </tr>
-                        </thead>
-                        <tbody id="calendar-body">
-                        </tbody>
-                    </table>
-                </div>
+                <?php include 'calendar.php' ?>
             </div>
             <section>
-                <div class="category">Category A</div>
-                <div class="task">
-                    <div class="task-check">
-                        <i class="task-check-button fa-solid fa-circle-check"></i>
-                    </div>
-                    <div class="task-content">
-                        some task
-                    </div>
+                <div id="A" class="category">Category A</div>
+                <div id="a-tasks">
+                <?php
+                if (isset($tasks)) {
+                    $categoryA = $tasks['A'];
+                    foreach ($categoryA as $task): ?>
+                        <div id="<?= $task->getId(); ?>"
+                             class="task<?= $task->getDateEnded() != null ? " task-done" : ""; ?>">
+                            <div class="task-check">
+                                <i class="task-check-button fa-solid fa-circle-check"></i>
+                            </div>
+                            <div class="task-content">
+                                <?= $task->getValue() ?>
+                            </div>
+                        </div>
+                    <?php endforeach;
+                } ?>
                 </div>
-                <div class="task">
-                    <div class="task-check">
-                        <i class="task-check-button fa-solid fa-circle-check"></i>
-                    </div>
-                    <div class="task-content">
-                        some task
-                    </div>
-                </div>
-                <div class="task">
-                    <div class="task-check">
-                        <i class="task-check-button fa-solid fa-circle-check"></i>
-                    </div>
-                    <div class="task-content">
-                        some task
-                    </div>
-                </div>
-                <div class="task">
-                    <div class="task-check">
-                        <i class="task-check-button fa-solid fa-circle-check"></i>
-                    </div>
-                    <div class="task-content">
-                        some task
-                    </div>
-                </div>
-                <div class="task">
-                    <div class="task-check">
-                        <i class="task-check-button fa-solid fa-circle-check"></i>
-                    </div>
-                    <div class="task-content">
-                        some task
-                    </div>
-                </div>
-                <div class="task">
-                    <div class="task-check">
-                        <i class="task-check-button fa-solid fa-circle-check"></i>
-                    </div>
-                    <div class="task-content">
-                        some task
-                    </div>
+                <div class="addButton-wrapper">
+                    <i id="add-a" class="addButton fa-solid fa-circle-plus"></i>
                 </div>
             </section>
             <section>
-                <div class="category">Category B</div>
-                <div class="task">
-                    <div class="task-check">
-                        <i class="task-check-button fa-solid fa-circle-check"></i>
-                    </div>
-                    <div class="task-content">
-                        some task
-                    </div>
+                <div id="B" class="category">Category B</div>
+                <div id="b-tasks">
+                <?php
+                if (isset($tasks)) {
+                    $categoryB = $tasks['B'];
+                    foreach ($categoryB as $task): ?>
+                        <div id="<?= $task->getId(); ?>" class="task<?= $task->getDateEnded() != null ? " task-done" : ""; ?>">
+                            <div class="task-check">
+                                <i class="task-check-button fa-solid fa-circle-check"></i>
+                            </div>
+                            <div class="task-content">
+                                <?= $task->getValue() ?>
+                            </div>
+                        </div>
+                    <?php endforeach;
+                } ?>
                 </div>
-                <div class="task">
-                    <div class="task-check">
-                        <i class="task-check-button fa-solid fa-circle-check"></i>
-                    </div>
-                    <div class="task-content">
-                        some task
-                    </div>
+                <div class="addButton-wrapper">
+                    <i id="add-b" class="addButton fa-solid fa-circle-plus"></i>
                 </div>
             </section>
             <section>
-                <div class="category">Category C</div>
-                <div class="task">
-                    <div class="task-check">
-                        <i class="task-check-button fa-solid fa-circle-check"></i>
-                    </div>
-                    <div class="task-content">
-                        some task
-                    </div>
+                <div id="C" class="category">Category C</div>
+                <div id="c-tasks">
+                <?php
+                if (isset($tasks)) {
+                    $categoryC = $tasks['C'];
+                    foreach ($categoryC as $task): ?>
+                        <div id="<?= $task->getId(); ?>" class="task<?= $task->getDateEnded() != null ? " task-done" : ""; ?>">
+                            <div class="task-check">
+                                <i class="task-check-button fa-solid fa-circle-check"></i>
+                            </div>
+                            <div class="task-content">
+                                <?= $task->getValue() ?>
+                            </div>
+                        </div>
+                    <?php endforeach;
+                } ?>
+                </div>
+                <div class="addButton-wrapper">
+                    <i id="add-c" class="addButton fa-solid fa-circle-plus"></i>
                 </div>
             </section>
         </div>
@@ -146,12 +105,19 @@
     <div id="simpleModal" class="modal-overlay">
         <iframe id="modal-iframe" src="/modal" allowtransparency="true"></iframe>
     </div>
+
+    <div id="create-task-modal" class="modal-overlay">
+        <iframe id="create-modal-iframe" src="/create" allowtransparency="true"></iframe>
+    </div>
 </div>
 <script>
     // Get modal element
     const modal = document.getElementById('simpleModal');
+    const createTaskModal = document.getElementById('create-task-modal');
     // Get open modal button
     const modalBtn = document.getElementById('modalBtn');
+    const createTaskButtons = [document.getElementById('add-a'), document.getElementById('add-b'), document.getElementById('add-c')];
+
     // Listen for open click
     modalBtn.addEventListener('click', openModal);
 
@@ -160,126 +126,31 @@
         modal.style.display = 'flex';
     }
 
+    function openCreateTaskModal(e) {
+        createTaskModal.style.display = 'flex';
+        addedCategory = e.target.id.substring(4).toUpperCase();
+        document.getElementById('create-modal-iframe').contentWindow.postMessage(addedCategory, '*');
+    }
+
+    function closeCreateTaskModal() {
+        createTaskModal.style.display = 'none';
+        getTasksByDay();
+    }
+
     function closeIFrame() {
         modal.style.display = 'none';
+        getTasksByDay();
     }
-
-    /* -------------------CALENDAR--------------- */
-
-    let today = new Date();
-    let currentMonth = today.getMonth();
-    let currentYear = today.getFullYear();
-    let allMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    let yearNum = document.getElementById("yearNum");
-
-    function renderMonths() {
-        allMonths.forEach(function (month, i) {
-            let months = document.querySelector('.months')
-            let monthSpan = document.createElement('span')
-
-            monthSpan.className = 'each-month'
-            monthSpan.id = i + 1
-            monthSpan.innerHTML = ` ${month} `
-            months.append(monthSpan)
-
-            monthSpan.addEventListener('click', function (e) {
-                if (document.querySelector('.hidden-p')) {
-                    let sel = document.querySelector('.selected-month')
-                    sel.className = "each-month"
-                }
-                e.target.className = 'selected-month'
-                let newp = document.createElement('p')
-                newp.className = 'hidden-p'
-                newp.hidden = true
-                monthSpan.append(newp)
-            })
-
-            document.addEventListener('click', function (e) {
-                if (e.target.className === 'selected-month') {
-                    e.preventDefault()
-                    currentMonth = e.target.id - 1
-                    currentYear = currentYear
-                    renderCalendar(currentMonth, currentYear)
-                }
-            })
-        })
-    }
-
-    function renderCalendar(month, year) {
-        let firstDayOfTheMonth = (new Date(year, month)).getDay();
-        let daysInMonth = 32 - new Date(year, month, 32).getDate();
-
-        let calendarTable = document.getElementById("calendar-body");
-        calendarTable.innerHTML = "";
-        yearNum.innerHTML = `${year}`;
-
-        let date = 1;
-        for (let i = 0; i < 6; i++) {
-            let week = document.createElement("tr");
-
-            for (let j = 0; j < 7; j++) {
-                if (i === 0 && j < firstDayOfTheMonth) {
-                    let day = document.createElement("td");
-                    let dateNum = document.createTextNode("");
-                    day.appendChild(dateNum);
-                    week.appendChild(day);
-                } else if (date > daysInMonth) {
-                    break;
-                } else {
-                    let day = document.createElement("td");
-                    let dateNum = document.createTextNode(date);
-                    if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
-                        day.title = "today";
-                    }
-                    day.appendChild(dateNum);
-                    week.appendChild(day);
-                    date++;
-                    day.id = `${year}-${String(month + 1).padStart(2, '0')}-${String(dateNum.textContent).padStart(2, '0')}`
-                    day.className = 'dates'
-                }
-            }
-            calendarTable.appendChild(week);
-        }
-        calendarTable.addEventListener('click', function (e) {
-            let hiddenTwo = document.querySelector('.hidden-p2')
-            if (hiddenTwo) {
-                let sel = document.querySelector('.selected-day')
-                sel.className = "dates"
-            }
-            e.target.className = 'selected-day'
-            let newpp = document.createElement('p')
-            newpp.className = 'hidden-p2'
-            newpp.hidden = true
-            calendarTable.append(newpp)
-        });
-    }
-
-    function nextYear() {
-        document.addEventListener('click', function (e) {
-            if (e.target.className.includes('triangle-right')) {
-                e.preventDefault()
-                currentYear = currentYear + 1
-                currentMonth = currentMonth;
-                renderCalendar(currentMonth, currentYear);
-            }
-        })
-    }
-
-    function previousYear() {
-        document.addEventListener('click', function (e) {
-            if (e.target.className.includes('triangle-left')) {
-                e.preventDefault()
-                currentYear = currentYear - 1;
-                currentMonth = currentMonth;
-                renderCalendar(currentMonth, currentYear);
-            }
-        })
-    }
-
-    renderMonths()
-    renderCalendar(currentMonth, currentYear);
-    nextYear()
-    previousYear()
 </script>
+<script src="/public/js/calendar.js"></script>
+<script src="/public/js/tasks.js"></script>
+<template id="task-template">
+    <div id="" class="task">
+        <div class="task-check">
+            <i class="task-check-button fa-solid fa-circle-check"></i>
+        </div>
+        <div class="task-content">content</div>
+    </div>
+</template>
 </body>
 </html>

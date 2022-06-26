@@ -51,6 +51,12 @@
     padding: 1em;
 }
 
+.dates:hover {
+    cursor: pointer;
+    background: rgba(46, 108, 211, 0.5);
+    border-radius: 100%;
+}
+
 @media only screen and (max-device-width: 420px) {
     .calendar-container .card {
         width: 80vw;

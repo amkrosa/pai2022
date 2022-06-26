@@ -103,3 +103,7 @@
     padding: 0.5vh 1vw;
     box-sizing: border-box;
 }
+
+.login-input-wrapper > input:disabled {
+    background: #e1e1e1;
+}

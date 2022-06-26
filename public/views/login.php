@@ -31,7 +31,7 @@
                 <div class="login-input-wrapper">
                     <div class="login-input-label">Username</div>
                     <div class="login-input-icon"><i class="fa-solid fa-user"></i></div>
-                    <input name="email" placeholder="Email..."/>
+                    <input name="login" placeholder="Login..."/>
                 </div>
             </div>
             <div class="login-input-container">
@@ -43,8 +43,10 @@
             </div>
             <button type="submit" class="button-fill-primary">Login</button>
             </form>
-
-        </div>
+            <div class="signup">
+                <div><a href="register">Sign up</a>
+                </div>
+            </div>
     </div>
 </div>
 </body>

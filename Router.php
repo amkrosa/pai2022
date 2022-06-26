@@ -2,7 +2,15 @@
 
 require_once 'src/controller/DefaultController.php';
 require_once 'src/controller/SecurityController.php';
-require_once 'Logger.php';
+require_once 'src/controller/AbcController.php';
+require_once 'src/controller/RegisterController.php';
+
+foreach (scandir('src/controller/') as $filename) {
+    $path = dirname(__FILE__) . '/' . $filename;
+    if (is_file($path)) {
+        require $path;
+    }
+}
 
 class Router {
 
@@ -17,8 +25,10 @@ class Router {
     }
 
     public static function run ($url) {
+        $urlParts = explode("/", $url);
         $action = explode("/", $url)[0];
         if (!array_key_exists($action, self::$routes)) {
+            http_response_code(404);
             die("Wrong url!");
         }
 
@@ -27,6 +37,7 @@ class Router {
         $object = new $controller;
         $action = $action ?: 'index';
 
-        $object->$action();
+        $param = $urlParts[1] ?? '';
+        $object->$action($param);
     }
 }
