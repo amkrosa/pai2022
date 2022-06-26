@@ -25,4 +25,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: cd wdpai-app/pai2022 && sh deploy.sh ${{ secrets.DB_USERNAME }} ${{ secrets.DB_PASSWORD }} ${{ secrets.DB_HOST }} ${{ secrets.DB_DATABASE }} ${{ secrets.EMAIL_URL }} ${{ secrets.EMAIL_LOGIN }} ${{ secrets.EMAIL_PASSWORD }}
+          script: cd wdpai-app/pai2022 && sh deploy.sh ${{ secrets.DB_USERNAME }} ${{ secrets.DB_PASSWORD }} ${{ secrets.DB_DATABASE }} ${{ secrets.DB_HOST }} ${{ secrets.EMAIL_URL }} ${{ secrets.EMAIL_LOGIN }} ${{ secrets.EMAIL_PASSWORD }}
