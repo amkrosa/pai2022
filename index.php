@@ -1,7 +1,12 @@
 <?php
 
 require 'Router.php';
-require_once 'config.php';
+require_once 'src/config/Config.php';
+
+if (!Config::getInstance()->getShowErrors()) {
+    error_reporting(0);
+    ini_set('display_errors', 0);
+}
 
 $path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url( $path, PHP_URL_PATH);

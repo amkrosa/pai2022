@@ -13,9 +13,11 @@ class UserService
     private RoleRepository $roleRepository){
     }
 
-    public function register($login, $password, $notificationEmail): User|null
+    public function register($login, $password, $notificationEmail): User|string|array
     {
-        if ($this->exists($login)) return null;
+        if ($this->exists($login)) return array("User with given login already exists.");
+        $validationResult = User::validate($login, $notificationEmail);
+        if (count($validationResult) != 0) return $validationResult;
 
         $notification = Notification::create($notificationEmail);
         $notificationId = $this->notificationRepository->save($notification);

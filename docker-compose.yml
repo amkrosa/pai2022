@@ -21,6 +21,7 @@ services:
       - EMAIL_URL
       - EMAIL_LOGIN
       - EMAIL_PASSWORD
+      - CONFIG_SHOW_ERRORS
     build:
       context: .
       dockerfile: docker/php/Dockerfile

@@ -1,6 +1,6 @@
 <?php
 
-require_once "config.php";
+require_once "src/config/Config.php";
 require_once "Client.php";
 
 class EmailClient extends Client
@@ -11,13 +11,14 @@ class EmailClient extends Client
 
     public function __construct()
     {
-        parent::__construct(EMAIL_MICROSERVICE_URL);
+        parent::__construct(Config::getInstance()->getEmailMicroserviceUrl());
     }
 
-    public function send($email, $login) {
+    public function send($email, $login)
+    {
         $bearerToken = $this->authorize();
 
-        $body = array (
+        $body = array(
             "subject" => "Welcome to mindhabit",
             "toEmail" => $email,
             "template" => self::TEMPLATE,
@@ -30,7 +31,9 @@ class EmailClient extends Client
 
     private function authorize()
     {
-        $result = $this->post(self::LOGIN_URL, array("username" => EMAIL_MICROSERVICE_LOGIN, "password" => EMAIL_MICROSERVICE_PASSWORD));
-        return $result['token_type'].' '.$result['access_token'];
+        $result = $this->post(self::LOGIN_URL,
+            array("username" => Config::getInstance()->getEmailMicroserviceLogin(),
+                  "password" => Config::getInstance()->getEmailMicroservicePassword()));
+        return $result['token_type'] . ' ' . $result['access_token'];
     }
 }

@@ -44,6 +44,15 @@ class User extends Entity
         return User::create($user->getLogin(), $user->getPassword(), $user->getRole(), $user->getNotification(), $id);
     }
 
+    public static function validate($login, $notificationEmail)
+    {
+        $messages = array();
+        if (!preg_match("/\S+@\S+\.\S+/", $notificationEmail)) $messages[] = "Invalid email.\n";
+        if (trim($login) == "" || $login == null) $messages[] = "Invalid login - empty.\n";
+        if (strlen($login) < 3) $messages[] = "Invalid login - too short.\n";
+        return $messages;
+    }
+
     /**
      * @return mixed|null
      */
