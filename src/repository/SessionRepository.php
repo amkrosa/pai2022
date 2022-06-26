@@ -1,5 +1,8 @@
 <?php
 
+require_once "Repository.php";
+require_once "src/model/Entity.php";
+
 class SessionRepository extends Repository
 {
     public function __construct()
