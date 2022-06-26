@@ -1,6 +1,11 @@
 <?php
 
 require 'Router.php';
+require 'config.php';
+
+if (!SHOW_ERRORS) {
+    error_reporting(0);
+}
 
 $path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url( $path, PHP_URL_PATH);

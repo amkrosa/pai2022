@@ -6,7 +6,6 @@ require_once 'src/repository/TaskRepository.php';
 require_once 'src/repository/CategoryRepository.php';
 require_once 'src/model/dto/TaskDto.php';
 require_once 'src/model/dto/CategorizedTasksDto.php';
-require_once 'src/util/SessionUtil.php';
 require_once 'src/service/SessionService.php';
 require_once 'src/repository/SessionRepository.php';
 require_once 'src/client/EmailClient.php';

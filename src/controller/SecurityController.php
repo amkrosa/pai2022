@@ -5,7 +5,6 @@ require_once 'src/repository/UserRepository.php';
 require_once 'src/repository/NotificationRepository.php';
 require_once 'src/repository/RoleRepository.php';
 require_once 'AppController.php';
-require_once 'src/util/SessionUtil.php';
 require_once 'src/service/UserService.php';
 require_once 'src/service/SessionService.php';
 require_once 'src/repository/SessionRepository.php';
