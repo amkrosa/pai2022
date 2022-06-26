@@ -21,11 +21,12 @@ class TaskRepository extends Repository
         return $this->findByFunction($statement);
     }
 
-    public function saveForUser(Task $task, string $userId): void
+    public function saveForUser(Task $task, string $userId): string|null
     {
         $taskId = $this->save($task);
         $statement = $this->database->connect()->prepare('INSERT INTO public."UserTask" (user_id, task_id) VALUES (?,?)');
         $statement->execute(array($userId, $taskId));
+        return $taskId;
     }
 
     /**

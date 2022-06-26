@@ -9,7 +9,10 @@ require_once 'src/service/UserService.php';
 
 class RegisterController extends AppController
 {
-    public function __construct(private UserService $userService = new UserService(new UserRepository(), new NotificationRepository(), new RoleRepository())){
+    public function __construct(
+        private UserService $userService = new UserService(new UserRepository(), new NotificationRepository(), new RoleRepository()),
+        private EmailClient $emailClient = new EmailClient()
+    ){
         parent::__construct();
     }
 
@@ -25,6 +28,7 @@ class RegisterController extends AppController
         if (!$user) {
             return $this->render('register', ['messages' => ['User already exists.']]);
         }
+        $this->emailClient->send($notificationEmail, $user->getLogin());
         SessionUtil::startSession($user);
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: $url/abc");

@@ -1,15 +1,16 @@
 <?php
 
+#[Table("Session")]
 class Session extends Entity
 {
     #[Column("id")]
     private $id;
     #[Column("user_id")]
     private $userId;
-    #[Column("login")]
-    private $login;
     #[Column("notification_id")]
     private $notificationId;
+    #[Column("login")]
+    private $login;
     #[Column("created")]
     private $created;
 
@@ -27,6 +28,11 @@ class Session extends Entity
             "created" => $created,
             "user_id" => $userId
         ));
+    }
+
+    public static function update(Session $session, $created): Session
+    {
+        return Session::create($session->getUserId(), $session->getNotificationId(), $session->getLogin(), $created, $session->getId());
     }
 
     /**

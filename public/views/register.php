@@ -11,9 +11,7 @@
 </head>
 <body>
 <div class="navbar-container">
-    <div class="logo-container">
-        <p>mindhabit</p>
-    </div>
+    <?php include "logo.php";?>
 </div>
 <div class="main-container">
     <div class="center-container">

@@ -7,11 +7,11 @@ require_once "Entity.php";
 class Task extends Entity
 {
     #[Column("id")]
-    private string $id;
+    private $id;
     #[Column("value")]
-    private string $value;
+    private $value;
     #[Column("category_id", "Category")]
-    private Category|string $category;
+    private Category|string|null $category;
     #[Column("date_added")]
     private $dateAdded;
     #[Column("date_ended")]

@@ -7,12 +7,15 @@ require_once 'src/repository/RoleRepository.php';
 require_once 'AppController.php';
 require_once 'src/util/SessionUtil.php';
 require_once 'src/service/UserService.php';
+require_once 'src/service/SessionService.php';
+require_once 'src/repository/SessionRepository.php';
 
 
 class SecurityController extends AppController
 {
     public function __construct(
-        private UserService $userService = new UserService(new UserRepository(), new NotificationRepository(), new RoleRepository())
+        private UserService $userService = new UserService(new UserRepository(), new NotificationRepository(), new RoleRepository()),
+        private SessionService $sessionService = new SessionService(new SessionRepository())
     )
     {
         parent::__construct();
@@ -31,8 +34,11 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['Wrong password or user with this login does not exist.']]);
         }
 
-        SessionUtil::startSession($user);
-        $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: $url/abc");
+        $this->sessionService->start($user);
+    }
+
+    public function logout()
+    {
+
     }
 }

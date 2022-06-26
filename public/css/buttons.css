@@ -20,7 +20,7 @@
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 0 1.5vw;
+    margin: 0 auto;
 }
 
 .button-fill-primary {
@@ -46,5 +46,13 @@
     flex: none;
     order: 1;
     flex-grow: 0;
-    margin: 0 1.5vw;
+    margin: 0 auto;
+}
+
+@media only screen and (max-device-width: 420px) {
+    .button-fill-primary {
+        font-size: 6vw;
+        width: 80vw;
+        height: 8vh;
+    }
 }

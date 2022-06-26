@@ -57,6 +57,10 @@
     border-radius: 100%;
 }
 
+.dates[title='today'] {
+    font-weight: bolder;
+}
+
 @media only screen and (max-device-width: 420px) {
     .calendar-container .card {
         width: 80vw;

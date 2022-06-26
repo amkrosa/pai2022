@@ -134,8 +134,8 @@ body {
     padding: 0;
 
     position: static;
-    width: 299px;
-    height: 79px;
+    width: 15vw;
+    height: 5vh;
 
 
     /* Inside auto layout */
@@ -143,14 +143,11 @@ body {
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 0 20vw;
+    margin: 0 15vw;
 }
 
 .logo-container p {
     position: static;
-    width: 299px;
-    height: 77px;
-
     font-family: 'Chivo', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -172,4 +169,9 @@ body {
     order: 0;
     flex-grow: 0;
     margin: 0px 10px;
+}
+
+.logo-container p > a {
+    color: black;
+    text-decoration: none;
 }

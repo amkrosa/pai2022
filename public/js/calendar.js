@@ -84,6 +84,7 @@ function renderCalendar(month, year) {
     };
 
     calendarBody.addEventListener('click', function (e) {
+        if (e.target.id === null || e.target.id === '')   return;
         const selectedDay = document.querySelector('.selected-day');
         if (selectedDay != null) selectedDay.classList.replace('selected-day', 'dates');
         e.target.className = 'selected-day'
@@ -122,7 +123,8 @@ function yyyymmdd(year, month, day) {
 }
 
 function manageCreateTaskButtons() {
-    if (Date.parse(document.getElementById('calendar').getAttribute('selected')) < Date.parse(yyyymmdd(currentYear, currentMonth, currentDay))) {
+    if (Date.parse(document.getElementById('calendar').getAttribute('selected')) <
+        Date.parse(yyyymmdd(today.getFullYear(), today.getMonth(), today.getDate()))) {
         createTaskButtons.forEach(button => {
             button.removeEventListener('click', openCreateTaskModal)
             button.setAttribute('disabled', '');
