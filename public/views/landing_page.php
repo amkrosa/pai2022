@@ -9,7 +9,7 @@
 <body>
 <div class="navbar-container">
     <div class="logo-container">
-        <p>mindhabits</p>
+        <p>mindhabit</p>
     </div>
     <div class="buttons-container">
         <button class="button-no-fill"><a href="login">Login</a></button>
