@@ -3,7 +3,7 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     margin: 1vh 0;
     padding: 1vh 1vw;
     width: 90vw;
@@ -250,6 +250,11 @@ nav .nav-select .nav-icon {
     align-items: center;
 }
 
+.logout {
+    order: 2;
+    width: 18vw;
+}
+
 @media only screen and (max-device-width: 420px) {
     .desktop {
         display: none;
@@ -369,4 +374,15 @@ nav .nav-select .nav-icon {
         width: 100%;
     }
 
+    .logout-text {
+        display: none;
+    }
+
+    nav {
+        justify-content: space-between;
+    }
+
+    .logout {
+        width: 18vw;
+    }
 }

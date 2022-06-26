@@ -25,7 +25,7 @@
 
 .button-fill-primary {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 10px 24px;
@@ -49,10 +49,37 @@
     margin: 0 auto;
 }
 
+.button-no-fill:hover {
+    cursor: pointer;
+}
+
+.button-fill-primary:hover {
+    cursor: pointer;
+}
+
+.button-fill-primary:active {
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button-no-fill:active {
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+button.button-fill-primary.logout-button {
+    background: white;
+    width: 7vw;
+    height: 7vw;
+}
+
 @media only screen and (max-device-width: 420px) {
     .button-fill-primary {
         font-size: 6vw;
         width: 80vw;
         height: 8vh;
+    }
+
+    button.button-fill-primary.logout-button {
+        width: 11vw;
+        height: 11vw;
     }
 }

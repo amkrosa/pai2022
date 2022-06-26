@@ -8,6 +8,7 @@ require_once 'AppController.php';
 require_once 'src/service/UserService.php';
 require_once 'src/service/SessionService.php';
 require_once 'src/repository/SessionRepository.php';
+require_once 'src/util/RedirectUtil.php';
 
 
 class SecurityController extends AppController
@@ -38,6 +39,11 @@ class SecurityController extends AppController
 
     public function logout()
     {
+        if (!$this->isPost()) {
+            RedirectUtil::toLandingPage();
+        }
 
+        $this->sessionService->destroy();
+        RedirectUtil::toLandingPage();
     }
 }

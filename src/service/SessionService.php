@@ -35,8 +35,7 @@ class SessionService
         $createdPlusFifteen = $oldSession->getCreated() + TimeUtil::minutesToSeconds(1);
 
         if ($createdPlusFifteen < $now) {
-            $this->sessionRepository->delete($_SESSION['user_id']);
-            session_destroy();
+            $this->destroy();
             RedirectUtil::toLogin();
         }
 
@@ -46,6 +45,7 @@ class SessionService
 
     public function destroy() {
         session_start();
+        if (!isset($_SESSION['user_id'])) RedirectUtil::toLandingPage();
         $this->sessionRepository->delete($_SESSION['user_id']);
         unset($_SESSION['user_id']);
         unset($_SESSION['notification_id']);
