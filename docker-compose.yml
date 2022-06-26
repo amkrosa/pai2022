@@ -18,6 +18,9 @@ services:
       - DB_USERNAME
       - DB_DATABASE
       - DB_HOST
+      - EMAIL_URL
+      - EMAIL_LOGIN
+      - EMAIL_PASSWORD
     build:
       context: .
       dockerfile: docker/php/Dockerfile

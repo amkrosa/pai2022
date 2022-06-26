@@ -104,6 +104,48 @@
     box-sizing: border-box;
 }
 
+input.input-wrap.invalid {
+    background: rgba(255, 0, 0, 0.39);
+}
+
 .login-input-wrapper > input:disabled {
     background: #e1e1e1;
+}
+
+.signup {
+    margin: 1vh 0;
+    padding: 1vh 0;
+}
+
+@media only screen and (max-device-width: 420px) {
+    .login-paper-container {
+        height: 45vh;
+        width: 100vw;
+        padding: 0;
+    }
+
+    .login-input-wrapper {
+        font-size: 4vw;
+    }
+
+    .login-input-wrapper > input {
+        height: 5vh;
+        width: 70vw;
+        margin-left: 6vw;
+        font-size: 6vw;
+    }
+
+    .login-input-container {
+        width: 80vw;
+        height: 8vh;
+    }
+    .signup {
+        font-size: 6vw;
+        margin: 1vh 0;
+        padding: 1vh 0;
+    }
+
+    .messages {
+        font-size: 4vw;
+    }
 }

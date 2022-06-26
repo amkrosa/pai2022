@@ -20,10 +20,12 @@ class TaskService
         $this->taskRepository->updateSingle('date_ended', date('Y-m-d'));
     }
 
-    public function create(string $category, string $userId, string $value, $selectedDate) {
+    public function create(string $category, string $userId, string $value, $selectedDate): TaskDto|null {
         if ($selectedDate < date("Y-m-d")) return null;
         $task = Task::create($value, $this->categoryRepository->choose($category), date("Y-m-d"), null);
-        $this->taskRepository->saveForUser($task, $userId);
+        $id = $this->taskRepository->saveForUser($task, $userId);
+        $dto = new TaskDto($id, $value, $category, $selectedDate, null);
+        return $dto;
     }
 
     public function changeCategory(string $id, string $category) {

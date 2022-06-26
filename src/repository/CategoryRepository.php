@@ -59,7 +59,7 @@ class CategoryRepository extends Repository
     }
 
     public function choose(string $category) {
-        return match ($category->getName()) {
+        return match ($category) {
             "A" => $this->getAId(),
             "B" => $this->getBId(),
             "C" => $this->getCId(),

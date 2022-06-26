@@ -358,4 +358,15 @@ nav .nav-select .nav-icon {
         justify-content: center;
     }
 
+    .create-task-container > .card {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .create-task-container {
+        font-size: 6vw;
+        width: 100%;
+    }
+
 }

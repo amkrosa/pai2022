@@ -15,7 +15,7 @@
 <body>
 <div class="base-container">
     <nav>
-        <h4>mindhabit</h4>
+        <?php include "logo.php";?>
         <div class="nav-select">
             <div class="nav-icon">
                 <i class="fa-solid fa-a"></i>
@@ -129,7 +129,10 @@
     function openCreateTaskModal(e) {
         createTaskModal.style.display = 'flex';
         addedCategory = e.target.id.substring(4).toUpperCase();
-        document.getElementById('create-modal-iframe').contentWindow.postMessage(addedCategory, '*');
+        const iframe = document.getElementById('create-modal-iframe');
+        const selectedDate  = document.getElementById('calendar').getAttribute('selected');
+        iframe.contentWindow.postMessage(addedCategory, '*');
+        iframe.contentWindow.postMessage(selectedDate, '*');
     }
 
     function closeCreateTaskModal() {

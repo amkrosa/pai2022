@@ -20,10 +20,18 @@ class SessionRepository extends Repository
         return $id;
     }
 
+    public function delete($userId) {
+        $statement = $this->database->connect()->prepare($this->deleteSql($userId));
+        $statement->execute();
+    }
+
     private function replaceSql(Session $session) {
-        return "INSERT INTO public.'Session' (id, user_id, notification_id, login, created) VALUES (?, ?, ?, ?, ?)
+        return "INSERT INTO ".$this->tableName." (id, user_id, notification_id, login, created) VALUES (?, ?, ?, ?, ?)
             ON CONFLICT (user_id)
             DO UPDATE SET created = ".$session->getCreated().";";
     }
 
+    private function deleteSql($userId) {
+        return "DELETE FROM ".$this->tableName." WHERE user_id='".$userId."'";
+    }
 }

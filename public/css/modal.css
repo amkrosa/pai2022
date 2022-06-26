@@ -14,3 +14,9 @@ body {
     margin-right: 1vw;
     font-size: 3vw;
 }
+
+@media only screen and (max-device-width: 420px) {
+    .createCloseButton {
+        font-size: 12vw;
+    }
+}
