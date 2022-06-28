@@ -67,8 +67,8 @@
 
 button.button-fill-primary.logout-button {
     background: white;
-    width: 7vw;
-    height: 7vw;
+    width: 5vw;
+    height: 5vw;
 }
 
 @media only screen and (max-device-width: 420px) {
