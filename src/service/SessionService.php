@@ -31,8 +31,7 @@ class SessionService
         $date = new DateTime();
         $now = $date->getTimestamp();
         $oldSession = $this->sessionRepository->findBy("user_id", $_SESSION['user_id']);
-        //TODO change session time to 15 minutes
-        $createdPlusFifteen = $oldSession->getCreated() + TimeUtil::minutesToSeconds(1);
+        $createdPlusFifteen = $oldSession->getCreated() + TimeUtil::minutesToSeconds(15);
 
         if ($createdPlusFifteen < $now) {
             $this->destroy();
