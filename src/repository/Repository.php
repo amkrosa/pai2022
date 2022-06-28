@@ -49,7 +49,6 @@ abstract class Repository {
 
     public function findAll(): array
     {
-        $sql = "";
         $statement = $this->database->connect();
         if (Entity::getTableView($this->entityClass) != null) {
             $view = Entity::getTableView($this->entityClass);

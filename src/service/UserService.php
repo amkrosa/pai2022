@@ -36,9 +36,7 @@ class UserService
 
     public function exists($login): User|bool
     {
-        if (null == $user = $this->userRepository->findBy('login', $login)) {
-            return false;
-        }
+        if (null == $user = $this->userRepository->findBy('login', $login)) return false;
         return $user;
     }
 }
